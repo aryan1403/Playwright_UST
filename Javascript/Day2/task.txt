@@ -1,4 +1,4 @@
-Task: 
+Task1: 
 1. Create a Register form (name, age, role, salary, email, phone_number)
 2. Submit --> Validation [name >=3, age > 18, role ? trainer == 'admin' : 'user', 
                             email validation, phone_number must have country code and len 10]
@@ -7,3 +7,13 @@ Task:
 3. Dashboard --> User details in proper format
 
 Note: CSS should be done properly
+
+Task2:
+1. Create a Vendor form (vendor_id, vendor_name, products [Array], vendor_rating)
+2. Submit --> Validation [id must be unique, name >=5, products != 0, sort the vendors according to the rating]
+                            Validation must be done!!
+                            (All vendors must be stored in objects)
+3. Dashboard --> Vendor details in proper format
+
+Note: CSS should be done properly
+
