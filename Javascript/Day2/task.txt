@@ -9,7 +9,7 @@ Task1:
 Note: CSS should be done properly
 
 Task2:
-1. Create a Vendor form (vendor_id, vendor_name, products [Array], vendor_rating)
+1. Create a Vendor form (vendor_id, vendor_name, products [Array (id, name, price)], vendor_rating)
 2. Submit --> Validation [id must be unique, name >=5, products != 0, sort the vendors according to the rating]
                             Validation must be done!!
                             (All vendors must be stored in objects)
