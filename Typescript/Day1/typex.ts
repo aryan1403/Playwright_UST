@@ -25,5 +25,16 @@ function main() {
     console.log(user.role, user2.role);
 }
 
-main();
+function sum(num: number | number[]) {
+    if(Array.isArray(num)) { // checks if num is array
+        let sum: number = 0;
+        num.forEach(e => sum += e);
+        return sum;
+    }
+    return num;
+}
+
+console.log(sum(5));
+
+// main();
 

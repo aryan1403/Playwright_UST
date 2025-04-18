@@ -11,4 +11,13 @@ function main() {
     var user2 = new UserAccount("Kirti", 2, "Tester");
     console.log(user.role, user2.role);
 }
-main();
+function sum(num) {
+    if (Array.isArray(num)) {
+        var sum_1 = 0;
+        num.forEach(function (e) { return sum_1 += e; });
+        return sum_1;
+    }
+    return num;
+}
+console.log(sum(5));
+// main();
