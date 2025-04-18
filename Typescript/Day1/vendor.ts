@@ -1,6 +1,7 @@
 type Vendor = {
   id: number;
   name: string;
+  lname?: string; // optional params ?
   productName: any; // don't know the type
   price: number;
 };
@@ -8,9 +9,9 @@ type Vendor = {
 let myname = "Aaryan"; // explicitly provide myname the data type of string
 
 const vendors: Vendor[] = [
-  { id: 3, name: "Naveen", productName: "Watch", price: 600 },
+  { id: 3, name: "Naveen", lname: "Kumar", productName: "Watch", price: 600 },
   { id: 1, name: "Vishal", productName: "Airpods", price: 750 },
-  { id: 2, name: "Ranjith", productName: "Tv", price: 800 },
+  { id: 2, name: "Ranjith", lname: "Singh", productName: "Tv", price: 800 },
 ];
 
 function sortVendors(): Vendor[] { // public Vendors[] sortVendors() {}
@@ -18,7 +19,7 @@ function sortVendors(): Vendor[] { // public Vendors[] sortVendors() {}
 }
 
 sortVendors().forEach((e) => 
-console.log(`ID: ${e.id}, Name: ${e.name}, Product: ${e.productName}, Price: ${e.price}`));
+console.log(`ID: ${e.id}, Name: ${e.lname != undefined ? e.name + " " + e.lname : e.name}, Product: ${e.productName}, Price: ${e.price}`));
 
   
 // id > id ? -ve : +ve

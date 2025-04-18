@@ -1,12 +1,16 @@
+var myname = "Aaryan"; // explicitly provide myname the data type of string
 var vendors = [
-    { id: 3, name: "Naveen", productName: "Watch", price: 600 },
+    { id: 3, name: "Naveen", lname: "Kumar", productName: "Watch", price: 600 },
     { id: 1, name: "Vishal", productName: "Airpods", price: 750 },
-    { id: 2, name: "Ranjith", productName: "Tv", price: 800 },
+    { id: 2, name: "Ranjith", lname: "Singh", productName: "Tv", price: 800 },
 ];
-vendors.sort(function (v1, v2) { return v1.id > v2.id ? -1 : 1; }).forEach(function (e) {
-    console.log("ID: ".concat(e.id, ", \n      Name: ").concat(e.name, ", \n      Product: ").concat(e.productName, ", \n      Price: ").concat(e.price));
+function sortVendors() {
+    return vendors.sort(function (v1, v2) { return v1.id > v2.id ? -1 : 1; });
+}
+sortVendors().forEach(function (e) {
+    return console.log("ID: ".concat(e.id, ", Name: ").concat(e.lname != undefined ? e.name + " " + e.lname : e.name, ", Product: ").concat(e.productName, ", Price: ").concat(e.price));
 });
-// id > id ? 1 : 0
+// id > id ? -ve : +ve
 /*
 for (let i = 0; i < vendors.length - 1; i++) {
   for (let j = 0; j < vendors.length - i - 1; j++) {
