@@ -1,6 +1,7 @@
 import {expect, test} from "@playwright/test";
 
 test('Page Title', async ({page}) => {
+  // test.setTimeout(100);
   await page.goto('https://www.typescriptlang.org/');
 
   // title should match (title, web_title)
@@ -8,6 +9,7 @@ test('Page Title', async ({page}) => {
 })
 
 test('Click Try ts btn', async ({page}) => {
+  // test.slow(); // triples the timeout --> 1000ms x 3
   await page.goto('https://www.typescriptlang.org/');
 
   // page.locator('#tsf > dkjbsd > divjjs')
