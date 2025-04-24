@@ -40,6 +40,7 @@ test('meow', async ({page, browserName}) => {
 // test.beforeAll()
 
 test('login', async ({page}) => {
+  /*
   const popup = await page.waitForEvent('popup');
 
   await popup.waitForFunction(() => {
@@ -50,8 +51,11 @@ test('login', async ({page}) => {
         btn.click(); // popup will be closed
       }
     });
-  })
+  })*/
 
-  // handle popups
+  // alert(), confirm(), prompt()
+  page.on('dialog', dialog => dialog.accept());
+
+  // write the test case
 });
 
