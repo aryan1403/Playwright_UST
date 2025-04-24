@@ -34,3 +34,24 @@ test('meow', async ({page, browserName}) => {
 
   // tests
 })
+
+
+
+// test.beforeAll()
+
+test('login', async ({page}) => {
+  const popup = await page.waitForEvent('popup');
+
+  await popup.waitForFunction(() => {
+    // click close btn
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      if(btn.innerText === 'close') {
+        btn.click(); // popup will be closed
+      }
+    });
+  })
+
+  // handle popups
+});
+
