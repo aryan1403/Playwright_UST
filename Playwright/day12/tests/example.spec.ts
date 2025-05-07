@@ -1,24 +1,33 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('http://localhost:5500/index.html');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Demo/);
+test('/ test', async ({ request }) => {
+  const res = await request.get('http://localhost:8000');
+  expect(res.ok()).toBeTruthy();
+  const body = await res.body();
+  expect(body.toString()).toBe('Hello world');
 });
 
-test('check heading', async ({ page }) => {
-  await page.goto('http://localhost:5500/index.html');
-
-  await page.getByText("Demo Website");
+test.skip('/:name test', async ({ request }) => {
+  [
+    'Aaryan', 'Arush', 'Kirti'
+  ].forEach(async (name) => {
+    const res = await request.get(`http://localhost:8000/${name}`);
+    expect(res.ok()).toBeTruthy();
+    const body = await res.body();
+    expect(body.toString()).toBe(`Hello ${name}`);
+  })
 });
 
-test('about home btn', async ({ page }) => { 
-  await page.goto('http://localhost:5500/index.html');
+test('/login test', async ({ request }) => {
+  const res = await request.post('http://localhost:8000/login', {
+    data: {
+      username: 'aryan',
+      pass: 123
+    }
+  });
+  expect(res.ok()).toBeTruthy();
+  const body = await res.body();
+  expect(body.toString()).toBe('Login success');
+});
 
-  await page.getByTestId("aboutbtn").click();
-  await expect(page).toHaveURL("http://localhost:5500/about.html");
 
-  await page.getByTestId("homebtn").click();
-  await expect(page).toHaveURL("http://localhost:5500/index.html");
-})
